@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02 - menu hambuerguer</title>
+
+    <style>
+       .navbar{
+           background-color: black;
+       }
+       .logo {
+           background-color: white;
+       }
+       .nav-links{
+        list-style: none;
+        display: flex; /*Exibe horizontalmente o menu*/
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+       }
+       .nav-links a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+       }
+       .hamburguer{
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer
+       }
+
+    /*Responsividade*/
+    @media screen and(max-width; 768px) {
+        .hamburguer{
+            /*mostra o botão hamburguer */
+            display: block;
+        }
+    }
+    /*Esconde a lista e muda o layout para vertical */
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* altura da navbar */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 20px 0;
+    }
+        /*Classe que será adicionado ao java script para mostrar o menu */
+        
+        .nav-links.active{
+            display: flex;
+        }
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Meu site</div>
+
+        <!-- Botão Hamburguer para responsividade -->
+        <button class="hamburguer" id="hambuerguer-btn">
+            &#9776; <!-- Símbolo do ícone de menu -->
+        </button>
+
+        <!-- Lista de intes do menu -->
+         <ul class="nav-links" id="nav-links">
+            <li>
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Serviços</a>
+                <a href="#">Contatos</a>
+
+            </li>
+         </ul>
+
+    </nav>
+
+    <div style="padding: 20px">
+        <h1>Conteúdo da página</h1>
+        <p>Redimensione a janela do navegador para ver o menu mudar.</p>
+    </div>
+    
+    
+    
+</body>
+</html>
